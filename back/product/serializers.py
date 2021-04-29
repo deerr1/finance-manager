@@ -1,21 +1,21 @@
 from rest_framework import serializers
 
-from .models import * as models
+from .models import Product, TypeProduct, Check
 
-class UserInfoSerializers(serializers.ModelSerializer):
-    """
-    Сериализатор информации о пользователе
-    """
-    class Meta:
-        model = models.UserInfo
-        fields = ['all']
+# class UserInfoSerializers(serializers.ModelSerializer):
+#     """
+#     Сериализатор информации о пользователе
+#     """
+#     class Meta:
+#         model = UserInfo
+#         fields = ['all']
 
 class ProductSerializers(serializers.ModelSerializer):
     """
     Сериализатор продуктов
     """
     class Meta:
-        model = models.Product
+        model = Product
         fields = ['all']
 
 class TypeProductSerializers(serializers.ModelSerializer):
@@ -23,7 +23,7 @@ class TypeProductSerializers(serializers.ModelSerializer):
     Сериализатор тип продукта
     """
     class Meta:
-        model = models.TypeProduct
+        model = TypeProduct
         fields = ['all']
 
 class CheckSerializers(serializers.ModelSerializer):
@@ -31,6 +31,7 @@ class CheckSerializers(serializers.ModelSerializer):
     Сериализатор чека
     """
     class Meta:
-        model = models.Check
+        model = Check
         fields = ['all']
+        depth = 1
 
